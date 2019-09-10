@@ -1,0 +1,31 @@
+{"games": 
+    [
+        {
+        "id": 1,
+        "homeTeam": "New York Jets",
+        "awayTeam": "Cleveland Browns",
+        "location": "MetLife Stadium - East Rutherford, New Jersey",
+        "date": "Monday, 9/16",
+        "time": "8:15 PM EST",
+        "weather": "TBD"
+        },
+        {
+        "id": 2,
+        "homeTeam": "Carolina Panthers",
+        "awayTeam": "Tampa Bay Buccaneers",
+        "location": "Bank of America - Charlotte, North Carolina",
+        "date": "Thursday, 9/12",
+        "time": "8:20 PM EST",
+        "weather": "TBD"
+        },
+        {
+        "id": 3,
+        "homeTeam": "Baltimore Ravens",
+        "awayTeam": "Arizona Cardinals",
+        "location": "M&T Bank Stadium - Baltimore, Maryland",
+        "date": "Sunday, 9/15",
+        "time": "1:00 PM EST",
+        "weather": "TBD"
+        }
+  ]
+}
