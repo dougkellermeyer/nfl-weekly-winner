@@ -3,7 +3,7 @@
     <h1>NFL Weekly Winners</h1>
     <h3>Select the winners for this week's games!</h3>
     <div v-bind:key="games.id" v-for="games in gameData">
-      <h3>{{games[0]}}</h3>
+      <h3>{{games.awayTeam}} at {{games.homeTeam}}</h3>
 
     </div>
 
