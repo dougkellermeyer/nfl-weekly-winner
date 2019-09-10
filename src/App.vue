@@ -6,7 +6,6 @@
 
 <script>
 import Games from './components/Games.vue'
-// import gameData from '../assets/data/gameData.json'
 
 export default {
   name: 'app',

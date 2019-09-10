@@ -1,11 +1,17 @@
 <template>
   <div>
     <h1>NFL Weekly Winners</h1>
-    <h3>Select the winners for this week's games!</h3>
-    <div v-bind:key="games.id" v-for="games in gameData">
-      <h3>{{games.awayTeam}} at {{games.homeTeam}}</h3>
+    <h2>Select the winners for this week's games!</h2>
+    <v-card v-bind:key="games.id" v-for="games in gameData">
+      <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
+      <v-card-text>{{games}}</v-card-text>
+      <v-card-text>Select the winner!</v-card-text>
+      <v-card-actions>
+        <v-btn text>{{games.awayTeam}}</v-btn>
+        <v-btn text>{{games.homeTeam}}</v-btn>
+      </v-card-actions>
 
-    </div>
+    </v-card>
 
   </div>
 </template>
@@ -26,6 +32,7 @@ export default {
 </script>
 
 <style scoped>
+
 h3 {
   margin: 40px 0 0;
 }
