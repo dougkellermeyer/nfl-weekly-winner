@@ -1,11 +1,6 @@
 # nfl-coding-exercise
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
+### To run locally
 ```
 npm run serve
 ```
@@ -24,6 +19,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
