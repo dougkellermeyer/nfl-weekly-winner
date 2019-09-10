@@ -3,6 +3,8 @@
     <h1>NFL Weekly Winners</h1>
 
     <h2>Select the winners for this week's games!</h2>
+    <h2>Add filter (team, division, day, time, etc.) component here</h2>
+
     <div class="container">
     <v-card class="gameCards" v-bind:key="games.id" v-for="games in gameData">
       <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
