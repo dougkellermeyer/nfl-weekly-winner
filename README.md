@@ -1,4 +1,4 @@
-# nfl-coding
+# nfl-coding-exercise
 
 ## Project setup
 ```
