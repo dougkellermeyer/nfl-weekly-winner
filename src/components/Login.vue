@@ -24,7 +24,7 @@
       :disabled="!valid"
       color="blue"
       class="mr-4"
-      @click="validate"
+      @click="$router.push('games')"
     >
       Submit
     </v-btn>
