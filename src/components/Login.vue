@@ -1,35 +1,35 @@
 <template>
 <div id ="login">
-    <h1>Login!</h1>
-<v-form
-    ref="form"
-    v-model="valid"
-    lazy-validation
-  >
-    <v-text-field
-      v-model="name"
-      :rules="nameRules"
-      label="Name"
-      required
-    ></v-text-field>
+    <v-card id="loginCard">
+        <v-card-title>Login</v-card-title>
+            <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+            >
+                <v-text-field
+                v-model="name"
+                :rules="nameRules"
+                label="Name"
+                required
+                ></v-text-field>
 
-    <v-text-field
-      v-model="email"
-      :rules="emailRules"
-      label="E-mail"
-      required
-    ></v-text-field>
+                <v-text-field
+                v-model="email"
+                :rules="emailRules"
+                label="E-mail"
+                required
+                ></v-text-field>
 
-    <v-btn
-      :disabled="!valid"
-      color="blue"
-      class="mr-4"
-      @click="$router.push('games')"
-    >
-      Submit
-    </v-btn>
-  </v-form>
-        <router-link to="/games">Games</router-link>
+                <v-btn
+                :disabled="!valid"
+                class="mr-4"
+                @click="$router.push('games')"
+                >
+                Submit
+                </v-btn>
+            </v-form>
+    </v-card>
     </div>
 
 </template>
@@ -50,14 +50,13 @@ export default {
         v => !!v || 'E-mail is required',
       ],
     }),
-
     methods: {
-      validate () {
-        if (this.$refs.form.validate()) {
-          alert('form complete')
-        }
-      },
-    },
+        //if further validation necessary
+        // validate () {
+        // if (this.$refs.form.validate()) {
+    
+        // }
+    }
   }
 </script>
 
@@ -71,9 +70,14 @@ color: #2c3e50;
 margin-top: 60px;
 }
 
-.container {
-display: flex;
-flex-direction: column;
+#loginCard {
+margin-left: 35%;
+margin-top: 200px;
+padding-top: 80px;
+padding-left: 40px;
+padding-right: 40px;
+width: 450px;
+height: 400px;
 }
 
 </style>
