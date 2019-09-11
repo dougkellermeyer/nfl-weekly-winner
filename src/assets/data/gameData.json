@@ -2,7 +2,9 @@
     {
     "id": 1,
     "homeTeam": "New York Jets",
+    "homeTeamDivision": "AFC East",
     "awayTeam": "Cleveland Browns",
+    "awayTeamDivision": "AFC North",
     "location": "MetLife Stadium - East Rutherford, New Jersey",
     "date": "Monday, 9/16",
     "time": "8:15 PM EST",
@@ -11,7 +13,9 @@
     {
     "id": 2,
     "homeTeam": "Carolina Panthers",
+    "homeTeamDivision":"NFC South",
     "awayTeam": "Tampa Bay Buccaneers",
+    "awayTeamDivision": "NFC South",
     "location": "Bank of America - Charlotte, North Carolina",
     "date": "Thursday, 9/12",
     "time": "8:20 PM EST",
@@ -20,7 +24,9 @@
     {
     "id": 3,
     "homeTeam": "Baltimore Ravens",
+    "homeTeamDivision":"AFC North",
     "awayTeam": "Arizona Cardinals",
+    "awayTeamDivision":"NFC West",
     "location": "M&T Bank Stadium - Baltimore, Maryland",
     "date": "Sunday, 9/15",
     "time": "1:00 PM EST",
@@ -29,7 +35,9 @@
     {
     "id": 4,
     "homeTeam": "New York Jets",
+    "homeTeamDivision": "AFC East",
     "awayTeam": "Cleveland Browns",
+    "awayTeamDivision": "AFC North",
     "location": "MetLife Stadium - East Rutherford, New Jersey",
     "date": "Monday, 9/16",
     "time": "8:15 PM EST",
@@ -38,7 +46,9 @@
     {
     "id": 5,
     "homeTeam": "Carolina Panthers",
+    "homeTeamDivision":"NFC South",
     "awayTeam": "Tampa Bay Buccaneers",
+    "awayTeamDivision": "NFC South",
     "location": "Bank of America - Charlotte, North Carolina",
     "date": "Thursday, 9/12",
     "time": "8:20 PM EST",
@@ -47,7 +57,9 @@
     {
     "id": 6,
     "homeTeam": "Baltimore Ravens",
+    "homeTeamDivision":"AFC North",
     "awayTeam": "Arizona Cardinals",
+    "awayTeamDivision":"NFC West",
     "location": "M&T Bank Stadium - Baltimore, Maryland",
     "date": "Sunday, 9/15",
     "time": "1:00 PM EST",

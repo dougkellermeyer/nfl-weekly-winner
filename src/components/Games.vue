@@ -3,14 +3,13 @@
     <h1>NFL Weekly Winners</h1>
 
     <h2>Select the winners for this week's games!</h2>
-    <h2>Add filter (team, division, day, time, etc.) component here</h2>
 
     <v-container fluid>
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
           :items="items"
-          label="Teams"
+          label="Division"
         ></v-select>
       </v-col>
 
@@ -18,7 +17,7 @@
         <v-select
           :items="items"
           filled
-          label="Division"
+          label="Conference"
         ></v-select>
       </v-col>
 
@@ -67,7 +66,7 @@ export default {
     return {
       gameData,
       search: '',
-      items: ['Cleveland Browns', 'Pittsburgh Steelers', 'Cincinatti Bengals', 'Baltimore Ravens']
+      items: ['AFC North', 'AFC South', 'NFC East', 'NFC West']
     }
   },
   computed: {
