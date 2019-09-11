@@ -9,20 +9,20 @@
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
           v-model="search"
-          :items="items"
+          :items="divisions"
           label="Division"
         ></v-select>
       </v-col>
 
-      <v-col class="d-flex" cols="12" sm="6">
+       <v-col class="d-flex" cols="12" sm="6">
         <v-select
-          :items="items"
-          filled
-          label="Conference"
+          v-model="search"
+          :items="conferences"
+          label="Conferences"
         ></v-select>
       </v-col>
 
-      <v-col class="d-flex" cols="12" sm="6">
+      <!-- <v-col class="d-flex" cols="12" sm="6">
         <v-select
           :items="items"
           label="Day"
@@ -36,7 +36,7 @@
           label="Time"
           solo
         ></v-select>
-      </v-col>
+      </v-col> -->
     </v-row>
   </v-container>
 
@@ -67,7 +67,9 @@ export default {
     return {
       gameData,
       search: '',
-      items: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North']
+      filterBy: '',
+      divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
+      conferences: ['AFC', 'NFC']
     }
   },
   computed: {
