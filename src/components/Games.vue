@@ -47,12 +47,13 @@
     
       <!-- <v-card-text>{{games}}</v-card-text> -->
      <v-container id="gameInfo">
-        <div>
+        <div id="matchUp">
           <v-card-text>{{games.awayTeam}}</v-card-text>
-          <v-card-text>at</v-card-text>
+          <!-- <v-card-text>at</v-card-text> -->
           <v-card-text>{{games.homeTeam}}</v-card-text>
         </div>
-        <div>
+        
+        <div id="dateTime">
           <v-card-text>{{games.date}}</v-card-text>
           <v-card-text>{{games.time}}</v-card-text>
         </div>
@@ -155,6 +156,7 @@ div.v-card {
 #gameInfo {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 }
 
 #gameInfo .v-card__text{
@@ -163,6 +165,11 @@ div.v-card {
   margin-top: 8px;
   margin-right: 10px;
   color:black;
+}
+
+#matchUp .v-card__text{
+  text-align: left;
+  font-size: 1.1em;
 }
 
 #selectWinner {
