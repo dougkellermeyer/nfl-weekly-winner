@@ -11,16 +11,17 @@
           v-model="filterBy"
           :items="divisions"
           label="Division"
+          clearable = true
         ></v-select>
       </v-col>
 
-       <v-col class="d-flex" cols="12" sm="6">
+       <!-- <v-col class="d-flex" cols="12" sm="6">
         <v-select
           v-model="filterBy"
           :items="conferences"
           label="Conferences"
         ></v-select>
-      </v-col>
+      </v-col> -->
 
       <!-- <v-col class="d-flex" cols="12" sm="6">
         <v-select
@@ -40,11 +41,17 @@
     </v-row>
   </v-container>
 
-    <div class="container">
+    <v-container>
     <!-- provide the v-for with the method you want to sort by which is determined by usedList[this.filterBy] -->
     <v-card class="gameCards" v-bind:key="games.id" v-for="games in filterByDivision">
       <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
-      <v-card-text>{{games}}</v-card-text>
+
+      <!-- <v-card-text>{{games}}</v-card-text> -->
+      <v-container class="gameInfo">
+        <v-card-text>{{games.date}}</v-card-text>
+        <v-card-text>{{games.time}}</v-card-text>
+      </v-container>
+
       <v-card-text>Select the winner!</v-card-text>
       <v-card-actions>
         <v-btn text>{{games.awayTeam}}</v-btn>
@@ -52,7 +59,7 @@
       </v-card-actions>
 
     </v-card>
-    </div>
+    </v-container>
 
   </div>
 </template>
@@ -118,8 +125,9 @@ h1 {
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-evenly ;
 }
 
 div.v-card {
@@ -128,6 +136,16 @@ div.v-card {
   margin-bottom: 20px;
   width: 500px;
   height: auto;
+}
+
+.v-card__title {
+  justify-content: center;
+}
+
+.gameInfo .v-card__text{
+  text-align: right;
+  padding: 0px;
+  color:black;
 }
 
 </style>
