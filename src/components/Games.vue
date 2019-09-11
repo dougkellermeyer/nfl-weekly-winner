@@ -8,6 +8,7 @@
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
+          v-model="search"
           :items="items"
           label="Division"
         ></v-select>
@@ -40,7 +41,7 @@
   </v-container>
 
     <div class="container">
-    <input type="text" v-model="search" placeholder = "Search"/>
+    <!-- <input type="text" v-model="search" placeholder = "Search"/> -->
     <v-card class="gameCards" v-bind:key="games.id" v-for="games in filteredGames">
       <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
       <v-card-text>{{games}}</v-card-text>
@@ -66,7 +67,7 @@ export default {
     return {
       gameData,
       search: '',
-      items: ['AFC North', 'AFC South', 'NFC East', 'NFC West']
+      items: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North']
     }
   },
   computed: {
@@ -75,7 +76,7 @@ export default {
           return this.gameData
         }
         return this.gameData.filter((game) => {
-          return game.homeTeam.match(this.search);
+          return game.homeTeamDivision === this.search || game.awayTeamDivision === this.search;
         })
     }
   }
