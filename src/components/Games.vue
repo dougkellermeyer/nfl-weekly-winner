@@ -8,7 +8,7 @@
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
-          v-model="search"
+          v-model="filterBy"
           :items="divisions"
           label="Division"
         ></v-select>
@@ -16,7 +16,7 @@
 
        <v-col class="d-flex" cols="12" sm="6">
         <v-select
-          v-model="search"
+          v-model="filterBy"
           :items="conferences"
           label="Conferences"
         ></v-select>
@@ -41,8 +41,8 @@
   </v-container>
 
     <div class="container">
-    <!-- <input type="text" v-model="search" placeholder = "Search"/> -->
-    <v-card class="gameCards" v-bind:key="games.id" v-for="games in filteredGames">
+    <!-- provide the v-for with the method you want to sort by which is determined by usedList[this.filterBy] -->
+    <v-card class="gameCards" v-bind:key="games.id" v-for="games in filterByDivision">
       <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
       <v-card-text>{{games}}</v-card-text>
       <v-card-text>Select the winner!</v-card-text>
@@ -66,21 +66,46 @@ export default {
   data(){
     return {
       gameData,
-      search: '',
       filterBy: '',
+      usedList: {},
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
       conferences: ['AFC', 'NFC']
     }
   },
   computed: {
-    filteredGames(){
-        if (!this.search) {
+    filterByDivision(){
+        if (!this.filterBy) {
           return this.gameData
         }
+
         return this.gameData.filter((game) => {
-          return game.homeTeamDivision === this.search || game.awayTeamDivision === this.search;
+          return game.homeTeamDivision === this.filterBy || game.awayTeamDivision === this.filterBy;
         })
-    }
+    },
+    // filterByConference(){
+      //filter logic here...
+      //if(filterBy is a conference) {
+      // usedList.computedValue = this.
+      // }
+      
+      //send return value to usedList obj
+      // usedList.computedValue = this.filterBy 
+
+      //return game.homeTeamDivision === this.filterBy || game.awayTeamDivision === this.filterBy 
+    // },
+
+    // filterByDate(){
+      //filter logic here...
+
+      //send return value to usedList obj
+      // usedList.computedValue = this.filterBy 
+    // },
+    // filterByTime(){
+      //filter logic here...
+
+      //send return value to usedList obj
+      // usedList.computedValue = this.filterBy 
+    // }
   }
 }
 </script>
