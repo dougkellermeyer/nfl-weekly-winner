@@ -5,20 +5,9 @@
 </template>
 
 <script>
-import Games from './components/Games.vue'
-import Login from './components/Login.vue'
 
 export default {
-  name: 'app',
-  components: {
-    Games,
-    Login
-  },
-  data() {
-    return {
-      
-    }
-  }
+  name: 'app'
 }
 </script>
 

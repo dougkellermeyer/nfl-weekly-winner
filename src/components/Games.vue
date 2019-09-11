@@ -28,11 +28,9 @@ import gameData from "../assets/data/gameData.json"
 export default {
   name: 'Games',
   props: ["games"],
-  data(){
-    return {
+  data: () => ({
       gameData 
-    }
-  }
+  })
 }
 </script>
 
