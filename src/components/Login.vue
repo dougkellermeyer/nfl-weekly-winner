@@ -1,6 +1,7 @@
 <template>
     <div id ="login">
         <h1>Login card goes here</h1>
+        <router-link to="/games">Games</router-link>
     </div>
 
 </template>
