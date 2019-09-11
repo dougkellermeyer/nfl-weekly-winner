@@ -48,14 +48,16 @@
       <!-- <v-card-text>{{games}}</v-card-text> -->
      <v-container id="gameInfo">
         <div id="matchUp">
-          <v-card-text>{{games.awayTeam}}</v-card-text>
+          <v-card-text id="awayTeamBackground">{{games.awayTeam}}</v-card-text>
           <!-- <v-card-text>at</v-card-text> -->
-          <v-card-text>{{games.homeTeam}}</v-card-text>
+          <v-card-text id="homeTeamBackground">{{games.homeTeam}}</v-card-text>
         </div>
         
         <div id="dateTime">
           <v-card-text>{{games.date}}</v-card-text>
           <v-card-text>{{games.time}}</v-card-text>
+          <v-card-text>Location</v-card-text>
+          <v-card-text>{{games.weather}}</v-card-text>
         </div>
       </v-container>
 
@@ -63,8 +65,8 @@
 
       <v-container class="winnerButtons">
         <v-card-actions>
-          <v-btn text>{{games.awayTeam}}</v-btn>
-          <v-btn text>{{games.homeTeam}}</v-btn>
+          <v-btn onclick="document.getElementById('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}}</v-btn>
+          <v-btn onclick="document.getElementById('homeTeamBackground').style.backgroundColor = 'white'" text>{{games.homeTeam}}</v-btn>
         </v-card-actions>
       </v-container>
     </v-card>
