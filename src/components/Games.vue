@@ -5,6 +5,41 @@
     <h2>Select the winners for this week's games!</h2>
     <h2>Add filter (team, division, day, time, etc.) component here</h2>
 
+    <v-container fluid>
+    <v-row align="center">
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select
+          :items="items"
+          label="Teams"
+        ></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select
+          :items="items"
+          filled
+          label="Division"
+        ></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select
+          :items="items"
+          label="Day"
+          outlined
+        ></v-select>
+      </v-col>
+
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select
+          :items="items"
+          label="Time"
+          solo
+        ></v-select>
+      </v-col>
+    </v-row>
+  </v-container>
+
     <div class="container">
     <input type="text" v-model="search" placeholder = "Search"/>
     <v-card class="gameCards" v-bind:key="games.id" v-for="games in filteredGames">
@@ -28,11 +63,11 @@ import gameData from "../assets/data/gameData.json"
 
 export default {
   name: 'Games',
-  props: ["games"],
   data(){
     return {
       gameData,
-      search: ''
+      search: '',
+      items: ['Cleveland Browns', 'Pittsburgh Steelers', 'Cincinatti Bengals', 'Baltimore Ravens']
     }
   },
   computed: {
@@ -40,7 +75,7 @@ export default {
         if (!this.search) {
           return this.gameData
         }
-        return this.games.filter((game) => {
+        return this.gameData.filter((game) => {
           return game.homeTeam.match(this.search);
         })
     }
