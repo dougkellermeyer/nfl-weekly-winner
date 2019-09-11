@@ -6,7 +6,8 @@
     <h2>Add filter (team, division, day, time, etc.) component here</h2>
 
     <div class="container">
-    <v-card class="gameCards" v-bind:key="games.id" v-for="games in gameData">
+    <input type="text" v-model="search" placeholder = "Search"/>
+    <v-card class="gameCards" v-bind:key="games.id" v-for="games in filteredGames">
       <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
       <v-card-text>{{games}}</v-card-text>
       <v-card-text>Select the winner!</v-card-text>
@@ -28,9 +29,22 @@ import gameData from "../assets/data/gameData.json"
 export default {
   name: 'Games',
   props: ["games"],
-  data: () => ({
-      gameData 
-  })
+  data(){
+    return {
+      gameData,
+      search: ''
+    }
+  },
+  computed: {
+    filteredGames(){
+        if (!this.search) {
+          return this.gameData
+        }
+        return this.games.filter((game) => {
+          return game.homeTeam.match(this.search);
+        })
+    }
+  }
 }
 </script>
 
