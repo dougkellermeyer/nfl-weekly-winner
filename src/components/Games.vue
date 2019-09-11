@@ -44,20 +44,25 @@
     <v-container>
     <!-- provide the v-for with the method you want to sort by which is determined by usedList[this.filterBy] -->
     <v-card class="gameCards" v-bind:key="games.id" v-for="games in filterByDivision">
-      <v-card-title>{{games.awayTeam}} at {{games.homeTeam}}</v-card-title>
-
+       <v-container class="matchUp">
+        <v-card-text>{{games.awayTeam}}</v-card-text>
+        <v-card-text>at</v-card-text>
+        <v-card-text>{{games.homeTeam}}</v-card-text>
+      </v-container>
       <!-- <v-card-text>{{games}}</v-card-text> -->
       <v-container class="gameInfo">
         <v-card-text>{{games.date}}</v-card-text>
         <v-card-text>{{games.time}}</v-card-text>
       </v-container>
 
-      <v-card-text>Select the winner!</v-card-text>
-      <v-card-actions>
-        <v-btn text>{{games.awayTeam}}</v-btn>
-        <v-btn text>{{games.homeTeam}}</v-btn>
-      </v-card-actions>
+      <v-card-text id= "selectWinner">Select the winner!</v-card-text>
 
+      <v-container class="winnerButtons">
+        <v-card-actions>
+          <v-btn text>{{games.awayTeam}}</v-btn>
+          <v-btn text>{{games.homeTeam}}</v-btn>
+        </v-card-actions>
+      </v-container>
     </v-card>
     </v-container>
 
@@ -142,10 +147,37 @@ div.v-card {
   justify-content: center;
 }
 
+.v-card__text {
+  justify-content: center;
+  padding: 0px;
+}
+
+.matchUp .v-card__text{
+  text-align: left;
+  padding: 0px;
+}
+
 .gameInfo .v-card__text{
   text-align: right;
   padding: 0px;
+  margin-top: 8px;
+  margin-right: 10px;
   color:black;
+}
+
+#selectWinner {
+  margin-bottom: 0px;
+  font-size: 1em;
+  color:black
+}
+
+.winnerButtons .v-btn {
+  background-color: darkgrey;
+  margin: 2px;
+}
+
+.winnerButtons {
+  padding: 5px;
 }
 
 </style>
