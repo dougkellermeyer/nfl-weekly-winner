@@ -68,8 +68,9 @@
       <v-container class="winnerButtons">
         <v-card-actions>
           <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
-          <v-btn onclick="document.getElementById('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}}</v-btn>
-          <v-btn onclick="document.getElementById('homeTeamBackground').style.backgroundColor = 'white'" text>{{games.homeTeam}}</v-btn>
+          <!-- onclick="document.getElementById('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
+          <v-btn >{{games.awayTeam}}</v-btn>
+          <v-btn v-on:click="changeColor">{{games.homeTeam}}</v-btn>
         </v-card-actions>
       </v-container>
     </v-card>
@@ -92,6 +93,11 @@ export default {
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
       conferences: ['AFC', 'NFC']
     }
+  },
+  methods: {
+  changeColor: function(event){
+    alert(event.target.style.backgroundColor)
+  }
   },
   computed: {
     filterGames(){
