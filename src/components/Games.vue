@@ -68,8 +68,8 @@
       <v-container class="winnerButtons">
         <v-card-actions>
           <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
-          <!-- onclick="document.getElementById('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
-          <v-btn >{{games.awayTeam}}</v-btn>
+          <!-- onclick="document.getElementsByClass('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
+          <v-btn>{{games.awayTeam}}</v-btn>
           <v-btn v-on:click="changeColor">{{games.homeTeam}}</v-btn>
         </v-card-actions>
       </v-container>
@@ -95,9 +95,9 @@ export default {
     }
   },
   methods: {
-  changeColor: function(event){
-    alert(event.target.style.backgroundColor)
-  }
+    changeColor: function(){
+      document.getElementById('homeTeamBackground').setAttribute("class", "addClassWinner");
+    }
   },
   computed: {
     filterGames(){
@@ -141,6 +141,10 @@ export default {
 
 h1 {
   margin-bottom: 20px;
+}
+
+.addClassWinner{
+  background-color: green;
 }
 
 .v-select_divisions {
