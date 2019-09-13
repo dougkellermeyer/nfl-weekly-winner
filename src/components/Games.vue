@@ -70,8 +70,8 @@
         <v-card-actions>
           <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
           <!-- onclick="document.getElementsByClass('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
-          <v-btn v-on:click="changeColorAway">{{games.awayTeam}}</v-btn>
-          <v-btn v-on:click="changeColorHome">{{games.homeTeam}}</v-btn>
+          <v-btn v-on:click="changeColorWinner">{{games.awayTeam}}</v-btn>
+          <v-btn v-on:click="changeColorWinner">{{games.homeTeam}}</v-btn>
         </v-card-actions>
       </v-container>
     </v-card>
@@ -97,18 +97,20 @@ export default {
     }
   },
   methods: {
-    changeColorHome: () => {      
+    changeColorWinner: () => {      
       //grab name of button (string), pass that to the getElementById
-      let winner = event.target.innerText
+      let winner = event.target.innerText.toLowerCase();
+
+      if(winner === gameData.homeTeam.toLowerCase()) {
+        document.querySelector('#homeTeamBackground').setAttribute("class", "addClassWinner");
+      } else {
+        document.querySelector('#awayTeamBackground').setAttribute("class", "addClassWinner")
+      }
 
       //toggle the winner class
       // document.getElementById('id').setAttribute("class", "addClassWinner");
       // document.getElementById('awayTeamBackground').setAttribute("class", "addClassLoser");
     },
-    changeColorAway: () => {
-      document.querySelector('#homeTeamBackground').setAttribute("class", "addClassLoser");
-      document.querySelector('#awayTeamBackground').setAttribute("class", "addClassWinner")
-    }
   },
   computed: {
     filterGames(){
