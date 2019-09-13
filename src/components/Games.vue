@@ -11,7 +11,6 @@
           v-model="filterBy"
           :clearable = "true"
           :items="divisions"
-          loading
           label="Division"
           outlined
         ></v-select>
@@ -58,7 +57,7 @@
         <div id="dateTime">
           <v-card-text>{{games.date}}</v-card-text>
           <v-card-text>{{games.time}}</v-card-text>
-          <v-card-text>Location</v-card-text>
+          <v-card-text>{{games.location}}</v-card-text>
           <v-card-text>{{games.weather}}</v-card-text>
         </div>
       </v-container>

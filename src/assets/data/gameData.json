@@ -5,7 +5,7 @@
     "homeTeamDivision": "AFC East",
     "awayTeam": "Cleveland Browns",
     "awayTeamDivision": "AFC North",
-    "location": "MetLife Stadium - East Rutherford, New Jersey",
+    "location": "East Rutherford, New Jersey",
     "date": "Monday, 9/16",
     "time": "8:15 PM EST",
     "weather": "TBD"
@@ -16,7 +16,7 @@
     "homeTeamDivision":"NFC South",
     "awayTeam": "Tampa Bay Buccaneers",
     "awayTeamDivision": "NFC South",
-    "location": "Bank of America - Charlotte, North Carolina",
+    "location": "Charlotte, North Carolina",
     "date": "Thursday, 9/12",
     "time": "8:20 PM EST",
     "weather": "TBD"
@@ -27,7 +27,7 @@
     "homeTeamDivision":"AFC North",
     "awayTeam": "Arizona Cardinals",
     "awayTeamDivision":"NFC West",
-    "location": "M&T Bank Stadium - Baltimore, Maryland",
+    "location": "Baltimore, Maryland",
     "date": "Sunday, 9/15",
     "time": "1:00 PM EST",
     "weather": "TBD"
@@ -38,7 +38,7 @@
     "homeTeamDivision": "AFC East",
     "awayTeam": "Cleveland Browns",
     "awayTeamDivision": "AFC North",
-    "location": "MetLife Stadium - East Rutherford, New Jersey",
+    "location": "East Rutherford, New Jersey",
     "date": "Monday, 9/16",
     "time": "8:15 PM EST",
     "weather": "TBD"
@@ -49,7 +49,7 @@
     "homeTeamDivision":"NFC South",
     "awayTeam": "Tampa Bay Buccaneers",
     "awayTeamDivision": "NFC South",
-    "location": "Bank of America - Charlotte, North Carolina",
+    "location": "Charlotte, North Carolina",
     "date": "Thursday, 9/12",
     "time": "8:20 PM EST",
     "weather": "TBD"
@@ -60,7 +60,7 @@
     "homeTeamDivision":"AFC North",
     "awayTeam": "Arizona Cardinals",
     "awayTeamDivision":"NFC West",
-    "location": "M&T Bank Stadium - Baltimore, Maryland",
+    "location": "Baltimore, Maryland",
     "date": "Sunday, 9/15",
     "time": "1:00 PM EST",
     "weather": "TBD"
