@@ -96,6 +96,7 @@ export default {
   },
   methods: {
     changeColorHome: function(){
+      //event.target but need to target the text above, not the btn/target itself
       document.getElementById('homeTeamBackground').setAttribute("class", "addClassWinner");
       document.getElementById('awayTeamBackground').setAttribute("class", "addClassLoser");
     },
