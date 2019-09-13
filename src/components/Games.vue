@@ -100,12 +100,13 @@ export default {
     changeColorWinner: () => {      
       //grab name of button (string), pass that to the getElementById
       let winner = event.target.innerText.toLowerCase();
+      console.log(gameData.homeTeam)
 
-      if(winner === gameData.homeTeam.toLowerCase()) {
-        document.querySelector('#homeTeamBackground').setAttribute("class", "addClassWinner");
-      } else {
-        document.querySelector('#awayTeamBackground').setAttribute("class", "addClassWinner")
-      }
+      // if(winner === gameData.homeTeam.toLowerCase()) {
+      //   document.querySelector('#homeTeamBackground').setAttribute("class", "addClassWinner");
+      // } else {
+      //   document.querySelector('#awayTeamBackground').setAttribute("class", "addClassWinner")
+      // }
 
       //toggle the winner class
       // document.getElementById('id').setAttribute("class", "addClassWinner");
