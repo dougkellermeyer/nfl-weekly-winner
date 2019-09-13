@@ -149,7 +149,7 @@ h1 {
 }
 
 .addClassWinner{
-  background-color: green;
+  background-color: lightgreen;
   border-radius: 5px;
   font-size: 1.25em;
   margin-top: 8px;
