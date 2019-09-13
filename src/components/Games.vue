@@ -8,6 +8,7 @@
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
+          id="selectDivision"
           v-model="filterBy"
           :clearable = "true"
           :items="divisions"
@@ -96,14 +97,17 @@ export default {
     }
   },
   methods: {
-    changeColorHome: () => {
-      //event.target but need to target the text above, not the btn/target itself
-      document.getElementById('homeTeamBackground').setAttribute("class", "addClassWinner");
-      document.getElementById('awayTeamBackground').setAttribute("class", "addClassLoser");
+    changeColorHome: () => {      
+      //grab name of button (string), pass that to the getElementById
+      let winner = event.target.innerText
+
+      //toggle the winner class
+      // document.getElementById('id').setAttribute("class", "addClassWinner");
+      // document.getElementById('awayTeamBackground').setAttribute("class", "addClassLoser");
     },
     changeColorAway: () => {
-      document.getElementById('homeTeamBackground').setAttribute("class", "addClassLoser");
-      document.getElementById('awayTeamBackground').setAttribute("class", "addClassWinner")
+      document.querySelector('#homeTeamBackground').setAttribute("class", "addClassLoser");
+      document.querySelector('#awayTeamBackground').setAttribute("class", "addClassWinner")
     }
   },
   computed: {
@@ -227,7 +231,7 @@ min-width: 411px;
 top: 60px !important; 
 left: 0px !important; 
 z-index: 8;
-background-color: transparent;
+background-color: red;
 }
 
 </style>
