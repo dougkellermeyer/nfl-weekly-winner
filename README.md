@@ -1,4 +1,4 @@
-# nfl-coding-exercise
+# nfl-weekly-winner
 
 ### To run locally
 ```
