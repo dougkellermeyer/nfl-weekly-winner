@@ -50,9 +50,9 @@
       <!-- <v-card-text>{{games}}</v-card-text> -->
      <v-container id="gameInfo">
         <div id="matchUp">
-          <v-card-text id="awayTeamBackground">{{games.awayTeam}}</v-card-text>
+          <v-card-text class="awayTeamBackground">{{games.awayTeam}}</v-card-text>
           <!-- <v-card-text>at</v-card-text> -->
-          <v-card-text id="homeTeamBackground">{{games.homeTeam}}</v-card-text>
+          <v-card-text class="homeTeamBackground">{{games.homeTeam}}</v-card-text>
         </div>
         
         <div id="dateTime">
@@ -99,14 +99,14 @@ export default {
   methods: {
     changeColorWinner: () => {      
       //grab name of button (string), pass that to the getElementById
-      let winner = event.target.innerText.toLowerCase();
-      console.log(gameData.homeTeam)
+      let winner = event.target.textContent;
+      console.log(winner)
 
-      // if(winner === gameData.homeTeam.toLowerCase()) {
-      //   document.querySelector('#homeTeamBackground').setAttribute("class", "addClassWinner");
-      // } else {
-      //   document.querySelector('#awayTeamBackground').setAttribute("class", "addClassWinner")
-      // }
+      if(winner === gameData[0].homeTeam) {
+        document.querySelector('.homeTeamBackground').setAttribute("class", "addClassWinner");
+      } else {
+        document.querySelector('.awayTeamBackground').setAttribute("class", "addClassWinner")
+      }
 
       //toggle the winner class
       // document.getElementById('id').setAttribute("class", "addClassWinner");
