@@ -4,16 +4,16 @@
 
     <h2>Select the winners for this week's games!</h2>
 
-    <v-container fluid>
+    <v-container fill-height>
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
           v-model="filterBy"
+          :clearable = "true"
           :items="divisions"
-          :menu-props="{bottom: false}"
+          loading
           label="Division"
           outlined
-          clearable = true
         ></v-select>
       </v-col>
 
@@ -137,14 +137,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-.v-menu__content {
-max-height: 304px; 
-min-width: 411px; 
-top: 35px; 
-left: 0px; 
-transform-origin: left top; 
-z-index: 8;
-background-color: red;
+.v-select_divisions {
+  background-color: green;
 }
 
 .container {
@@ -202,6 +196,15 @@ div.v-card {
 
 .winnerButtons {
   padding: 5px;
+}
+
+.v-menu > .v-menu__content.menuable__content__active{
+max-height: 304px; 
+min-width: 411px; 
+top: 60px !important; 
+left: 0px !important; 
+z-index: 8;
+background-color: transparent;
 }
 
 </style>
