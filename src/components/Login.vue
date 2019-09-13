@@ -80,4 +80,8 @@ width: 450px;
 height: 400px;
 }
 
+#loginCard > .v-card__title{
+    padding: 16px 0px 8px
+}
+
 </style>
