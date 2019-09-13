@@ -58,6 +58,7 @@
           <v-card-text>{{games.date}}</v-card-text>
           <v-card-text>{{games.time}}</v-card-text>
           <v-card-text>{{games.location}}</v-card-text>
+          <!-- weather API key 1fd143a7ec38c83bdc1726e9c0220d29 -->
           <v-card-text>{{games.weather}}</v-card-text>
         </div>
       </v-container>
@@ -81,6 +82,7 @@
 <script>
 
 import gameData from "../assets/data/gameData.json"
+// var gameDataSorted = gameData.sort((a,b) => (a.date > b.date) ? 1 : -1);
 
 export default {
   name: 'Games',
@@ -94,12 +96,12 @@ export default {
     }
   },
   methods: {
-    changeColorHome: function(){
+    changeColorHome: () => {
       //event.target but need to target the text above, not the btn/target itself
       document.getElementById('homeTeamBackground').setAttribute("class", "addClassWinner");
       document.getElementById('awayTeamBackground').setAttribute("class", "addClassLoser");
     },
-    changeColorAway: function(){
+    changeColorAway: () => {
       document.getElementById('homeTeamBackground').setAttribute("class", "addClassLoser");
       document.getElementById('awayTeamBackground').setAttribute("class", "addClassWinner")
     }
@@ -107,7 +109,7 @@ export default {
   computed: {
     filterGames(){
         if (!this.filterBy) {
-          return this.gameData
+          return this.gameData;
         }
 
         return this.gameData.filter((game) => {
