@@ -10,7 +10,9 @@
         <v-select
           v-model="filterBy"
           :items="divisions"
+          :menu-props="{bottom: false}"
           label="Division"
+          outlined
           clearable = true
         ></v-select>
       </v-col>
@@ -43,7 +45,7 @@
 
     <v-container>
     <!-- provide the v-for with the method you want to sort by which is determined by usedList[this.filterBy] -->
-    <v-card class="gameCards" v-bind:key="games.id" v-for="games in filterByDivision">
+    <v-card class="gameCards" v-bind:key="games.id" v-for="games in filterGames">
     
       <!-- <v-card-text>{{games}}</v-card-text> -->
      <v-container id="gameInfo">
@@ -65,6 +67,7 @@
 
       <v-container class="winnerButtons">
         <v-card-actions>
+          <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
           <v-btn onclick="document.getElementById('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}}</v-btn>
           <v-btn onclick="document.getElementById('homeTeamBackground').style.backgroundColor = 'white'" text>{{games.homeTeam}}</v-btn>
         </v-card-actions>
@@ -91,13 +94,13 @@ export default {
     }
   },
   computed: {
-    filterByDivision(){
+    filterGames(){
         if (!this.filterBy) {
           return this.gameData
         }
 
         return this.gameData.filter((game) => {
-          return game.homeTeamDivision === this.filterBy || game.awayTeamDivision === this.filterBy;
+          return !this.filterBy || (game.homeTeamDivision === this.filterBy || game.awayTeamDivision === this.filterBy);
         })
     },
     // filterByConference(){
@@ -132,6 +135,16 @@ export default {
 
 h1 {
   margin-bottom: 20px;
+}
+
+.v-menu__content {
+max-height: 304px; 
+min-width: 411px; 
+top: 35px; 
+left: 0px; 
+transform-origin: left top; 
+z-index: 8;
+background-color: red;
 }
 
 .container {
