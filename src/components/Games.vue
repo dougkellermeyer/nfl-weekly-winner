@@ -101,11 +101,9 @@ export default {
       //grab name of button (string), pass that to the getElementById
       let winner = event.target.textContent;
 
-      let matchUps = [...document.querySelectorAll('.matchUpTeam')]  
-                    .map(div => div.textContent)                        
-                    .filter(txt => txt.includes(winner))                
-                    .forEach(txt => console.log(txt));                  
-
+      let selectedWinner = [...document.querySelectorAll('.matchUpTeam')]  
+                          .filter(div => div.textContent.includes(winner))
+                          .forEach(div => div.setAttribute("class", "addClassWinner"));
 
       // if(winner === gameData[0].homeTeam) {
       //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner");
