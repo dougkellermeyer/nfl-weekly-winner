@@ -93,17 +93,27 @@ export default {
       filterBy: '',
       usedList: {},
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
-      conferences: ['AFC', 'NFC']
+      conferences: ['AFC', 'NFC'],
+      matches: []
     }
   },
+
   methods: {
     changeColorWinner: () => {      
       //grab name of button (string), pass that to the getElementById
-      let winner = event.target.textContent;
+      var vm = this;
+      console.log(vm.matches)
+  
 
-      let selectedWinner = [...document.querySelectorAll('.matchUpTeam')]  
-                          .filter(div => div.textContent.includes(winner))
-                          .forEach(div => div.setAttribute("class", "addClassWinner"));
+      let winner = event.target.textContent;
+      let matchUpArray = [...document.querySelectorAll('.matchUpTeam')];  
+      
+      for (let matchUp of matchUpArray) {
+        if(matchUp.textContent.includes(winner)){
+          matchUp.setAttribute("class", "addClassWinner")
+          matches.push(matchUp.textContent)
+        } 
+      }
 
       // if(winner === gameData[0].homeTeam) {
       //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner");
@@ -112,6 +122,7 @@ export default {
       // }
     },
   },
+
   computed: {
     filterGames(){
         if (!this.filterBy) {

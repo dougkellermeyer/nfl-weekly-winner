@@ -31,38 +31,5 @@
     "date": "Sunday, 9/15",
     "time": "1:00 PM EST",
     "weather": "TBD"
-    },
-    {
-    "id": 4,
-    "homeTeam": "New York Jets",
-    "homeTeamDivision": "AFC East",
-    "awayTeam": "Cleveland Browns",
-    "awayTeamDivision": "AFC North",
-    "location": "East Rutherford, New Jersey",
-    "date": "Monday, 9/16",
-    "time": "8:15 PM EST",
-    "weather": "TBD"
-    },
-    {
-    "id": 5,
-    "homeTeam": "Carolina Panthers",
-    "homeTeamDivision":"NFC South",
-    "awayTeam": "Tampa Bay Buccaneers",
-    "awayTeamDivision": "NFC South",
-    "location": "Charlotte, North Carolina",
-    "date": "Thursday, 9/12",
-    "time": "8:20 PM EST",
-    "weather": "TBD"
-    },
-    {
-    "id": 6,
-    "homeTeam": "Baltimore Ravens",
-    "homeTeamDivision":"AFC North",
-    "awayTeam": "Arizona Cardinals",
-    "awayTeamDivision":"NFC West",
-    "location": "Baltimore, Maryland",
-    "date": "Sunday, 9/15",
-    "time": "1:00 PM EST",
-    "weather": "TBD"
     }
   ]
