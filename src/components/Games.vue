@@ -100,6 +100,7 @@ export default {
     changeColorWinner: () => {      
       //grab name of button (string), pass that to the getElementById
       let winner = event.target.textContent;
+      let clickCount = 0;
       console.log(winner)
 
       if(winner === gameData[0].homeTeam) {
