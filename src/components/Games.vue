@@ -50,9 +50,9 @@
       <!-- <v-card-text>{{games}}</v-card-text> -->
      <v-container id="gameInfo">
         <div id="matchUp">
-          <v-card-text class="awayTeamBackground">{{games.awayTeam}}</v-card-text>
+          <v-card-text class="matchUpTeam">{{games.awayTeam}}</v-card-text>
           <!-- <v-card-text>at</v-card-text> -->
-          <v-card-text class="homeTeamBackground">{{games.homeTeam}}</v-card-text>
+          <v-card-text class="matchUpTeam">{{games.homeTeam}}</v-card-text>
         </div>
         
         <div id="dateTime">
@@ -69,7 +69,7 @@
       <v-container class="winnerButtons">
         <v-card-actions>
           <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
-          <!-- onclick="document.getElementsByClass('awayTeamBackground').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
+          <!-- onclick="document.getElementsByClass('matchUpTeam').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
           <v-btn v-on:click="changeColorWinner">{{games.awayTeam}}</v-btn>
           <v-btn v-on:click="changeColorWinner">{{games.homeTeam}}</v-btn>
         </v-card-actions>
@@ -100,18 +100,18 @@ export default {
     changeColorWinner: () => {      
       //grab name of button (string), pass that to the getElementById
       let winner = event.target.textContent;
-      let clickCount = 0;
-      console.log(winner)
 
-      if(winner === gameData[0].homeTeam) {
-        document.querySelector('.homeTeamBackground').setAttribute("class", "addClassWinner");
-      } else {
-        document.querySelector('.awayTeamBackground').setAttribute("class", "addClassWinner")
-      }
+      let matchUps = [...document.querySelectorAll('.matchUpTeam')]  
+                    .map(div => div.textContent)                        
+                    .filter(txt => txt.includes(winner))                
+                    .forEach(txt => console.log(txt));                  
 
-      //toggle the winner class
-      // document.getElementById('id').setAttribute("class", "addClassWinner");
-      // document.getElementById('awayTeamBackground').setAttribute("class", "addClassLoser");
+
+      // if(winner === gameData[0].homeTeam) {
+      //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner");
+      // } else {
+      //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner")
+      // }
     },
   },
   computed: {
