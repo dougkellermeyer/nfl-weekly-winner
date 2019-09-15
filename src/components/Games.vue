@@ -99,10 +99,10 @@ export default {
   },
 
   methods: {
-    changeColorWinner: () => {      
+     changeColorWinner() {      
       //grab name of button (string), pass that to the getElementById
-      var vm = this;
-      console.log(vm.matches)
+    let matches = this.matches;
+     console.log(this.matches)
   
 
       let winner = event.target.textContent;
@@ -114,6 +114,8 @@ export default {
           matches.push(matchUp.textContent)
         } 
       }
+
+      console.log(matches)
 
       // if(winner === gameData[0].homeTeam) {
       //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner");
