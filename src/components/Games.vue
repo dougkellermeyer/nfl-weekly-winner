@@ -65,7 +65,7 @@ export default {
       usedList: {},
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
       conferences: ['AFC', 'NFC'],
-      weather: 'weather loading...'
+      weather: []
     }
   },
 
@@ -76,11 +76,24 @@ export default {
   methods: {
     loadWeather(){
       console.log(this.weather)
-      var vm = this;
-      axios.get('https://api.openweathermap.org/data/2.5/weather?q=Rochester&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
+      const vm = this;
+
+      let cities = [];
+
+      //loop through cities and get weather data for each
+      for (let i = 0; i < gameData.length; i ++){
+          let loc = gameData[i].location
+          let city = loc.substring(0, loc.indexOf(','))
+          cities.push(city);
+      }
+
+      console.log(cities)
+
+      let location = ""
+
+      axios.get('https://api.openweathermap.org/data/2.5/weather?q=+'+ location + '&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
       .then(function(response){
-        vm.weather = "Current Weather - " + Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min) + " \xB0" + "F"
-        console.log(response)
+        vm.weather = Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min) + " \xB0" + "F"
       })
       .catch(function(error){
         vm.weather = 'An error has occured' + error;
