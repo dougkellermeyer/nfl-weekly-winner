@@ -1,6 +1,9 @@
 <template>
 <div id ="login">
+
     <v-card id="loginCard">
+            <h1>NFL Weekly Winner</h1>
+
         <v-card-title>Login</v-card-title>
             <v-form
                 ref="form"
@@ -70,14 +73,20 @@ color: #2c3e50;
 margin-top: 60px;
 }
 
+
 #loginCard {
 margin-left: 35%;
 margin-top: 200px;
-padding-top: 80px;
+padding-top: 40px;
 padding-left: 40px;
 padding-right: 40px;
 width: 450px;
 height: 400px;
+}
+
+#loginCard > h1 {
+margin-bottom: 22px;
+color: #638093;
 }
 
 #loginCard > .v-card__title{

@@ -3,8 +3,9 @@
     <h1>NFL Weekly Winner</h1>
 
     <h2>Select the winners for this week's games!</h2>
-  <v-container>
-    <v-row align="center">
+
+<v-container>
+  <v-row>
       <v-col cols="3" sm="5">
         <v-select
           :menu-props="{ 
@@ -22,17 +23,16 @@
         ></v-select>
       </v-col>
     </v-row>
+   
 </v-container>
 
     <v-container>
-    <!-- provide the v-for with the method you want to sort by which is determined by usedList[this.filterBy] -->
+
     <v-card class="gameCards" v-bind:key="games.id" v-for="games in filterGames">
     
-      <!-- <v-card-text>{{games}}</v-card-text> -->
      <v-container id="gameInfo">
         <div id="matchUp">
           <v-card-text class="matchUpTeam">{{games.awayTeam}}</v-card-text>
-          <!-- <v-card-text>at</v-card-text> -->
           <v-card-text class="matchUpTeam">{{games.homeTeam}}</v-card-text>
         </div>
         
@@ -111,7 +111,15 @@ export default {
 <style scoped>
 
 h1 {
+  margin-top: 50px;
   margin-bottom: 20px;
+  color: white;
+  font-size: 4em
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: white;
 }
 
 .addClassWinner{
@@ -181,6 +189,10 @@ top: 60px !important;
 left: 0px !important; 
 z-index: 8;
 background-color: red;
+}
+
+v-select > v-menu {
+  left: 0px;
 }
 
 
