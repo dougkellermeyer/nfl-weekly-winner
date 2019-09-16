@@ -1,14 +1,15 @@
 <template>
   <div>
-    <h1>NFL Weekly Winners</h1>
+    <h1>NFL Weekly winnersArray</h1>
 
-    <h2>Select the winners for this week's games!</h2>
+    <h2>Select the winnersArray for this week's games!</h2>
 
     <v-container fill-height>
     <v-row align="center">
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
           id="selectDivision"
+          class="override"
           v-model="filterBy"
           :clearable = "true"
           :items="divisions"
@@ -68,10 +69,8 @@
 
       <v-container class="winnerButtons">
         <v-card-actions>
-          <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
-          <!-- onclick="document.getElementsByClass('matchUpTeam').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
-          <v-btn @click="$emit('change-color',games.id)">{{games.awayTeam}}</v-btn>
-          <v-btn @click="$emit('change-color',games.id)">{{games.homeTeam}}</v-btn>
+          <v-btn @click="changeColorWinner($event)">{{games.awayTeam}}</v-btn>
+          <v-btn @click="changeColorWinner($event)">{{games.homeTeam}}</v-btn>
         </v-card-actions>
       </v-container>
     </v-card>
@@ -94,37 +93,25 @@ export default {
       usedList: {},
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
       conferences: ['AFC', 'NFC'],
-      winners: []
     }
   },
 
   methods: {
-     changeColorWinner() {      
-      //grab name of button (string), pass that to the getElementById
-    let winners = this.winners;
-     console.log(this.winners)
-  
-
+    changeColorWinner(event) {
       let winner = event.target.textContent;
-      let matchUpArray = [...document.querySelectorAll('.matchUpTeam')];  
-      
-      for (let matchUp of matchUpArray) {
-        if(matchUp.textContent.includes(winner)){
-          matchUp.setAttribute("class", "addClassWinner")
-          winners.push(matchUp.textContent)
-        } else{
-         //remove from winners array
+
+      let cardNode = event.target.parentNode.parentNode.parentNode.parentNode;
+
+      let matchUpArray = [...cardNode.children[0].querySelectorAll('.matchUpTeam')];  
+        
+        for (let matchUp of matchUpArray) {
+          if(matchUp.textContent.includes(winner)){
+            matchUp.classList.toggle("addClassWinner")
+          } else{
+            matchUp.classList.remove("addClassWinner")
+          }
         }
-      }
-
-      console.log(winners)
-
-      // if(winner === gameData[0].homeTeam) {
-      //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner");
-      // } else {
-      //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner")
-      // }
-    },
+    }
   },
 
   computed: {
@@ -248,7 +235,12 @@ min-width: 411px;
 top: 60px !important; 
 left: 0px !important; 
 z-index: 8;
-background-color: red;
+}
+
+#selectDivision.override{
+  top: 60px;
+  left: 0px;
+  background-color: red;
 }
 
 </style>
