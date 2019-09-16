@@ -79,7 +79,8 @@ export default {
       var vm = this;
       axios.get('https://api.openweathermap.org/data/2.5/weather?q=Rochester&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
       .then(function(response){
-        vm.weather = response.data.main
+        vm.weather = Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min)
+        console.log(response)
       })
       .catch(function(error){
         vm.weather = 'An error has occured' + error;
