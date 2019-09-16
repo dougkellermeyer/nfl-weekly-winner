@@ -70,8 +70,8 @@
         <v-card-actions>
           <!-- Make winner bigger and bolder. Loser gets smaller font and fades (opacity) -->
           <!-- onclick="document.getElementsByClass('matchUpTeam').style.backgroundColor = 'white'" text>{{games.awayTeam}} -->
-          <v-btn v-on:click="changeColorWinner">{{games.awayTeam}}</v-btn>
-          <v-btn v-on:click="changeColorWinner">{{games.homeTeam}}</v-btn>
+          <v-btn @click="$emit('change-color',games.id)">{{games.awayTeam}}</v-btn>
+          <v-btn @click="$emit('change-color',games.id)">{{games.homeTeam}}</v-btn>
         </v-card-actions>
       </v-container>
     </v-card>
