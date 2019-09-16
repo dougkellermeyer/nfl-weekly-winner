@@ -3,20 +3,26 @@
     <h1>NFL Weekly Winner</h1>
 
     <h2>Select the winners for this week's games!</h2>
-
-    <v-container>
+  <v-container>
     <v-row align="center">
-      <v-col cols="2" sm="5">
+      <v-col cols="3" sm="5">
         <v-select
+          :menu-props="{ 
+          auto: false,
+          overflowY: true,
+          top: true,
+          left: true,
+          maxWidth: auto
+          }"
           v-model="filterBy"
-          :clearable = "true"
+          :clearable = true
           :items="divisions"
           label="Division"
           outlined
         ></v-select>
       </v-col>
     </v-row>
-  </v-container>
+</v-container>
 
     <v-container>
     <!-- provide the v-for with the method you want to sort by which is determined by usedList[this.filterBy] -->
@@ -97,31 +103,7 @@ export default {
         return this.gameData.filter((game) => {
           return !this.filterBy || (game.homeTeamDivision === this.filterBy || game.awayTeamDivision === this.filterBy);
         })
-    },
-    // filterByConference(){
-      //filter logic here...
-      //if(filterBy is a conference) {
-      // usedList.computedValue = this.
-      // }
-      
-      //send return value to usedList obj
-      // usedList.computedValue = this.filterBy 
-
-      //return game.homeTeamDivision === this.filterBy || game.awayTeamDivision === this.filterBy 
-    // },
-
-    // filterByDate(){
-      //filter logic here...
-
-      //send return value to usedList obj
-      // usedList.computedValue = this.filterBy 
-    // },
-    // filterByTime(){
-      //filter logic here...
-
-      //send return value to usedList obj
-      // usedList.computedValue = this.filterBy 
-    // }
+    }
   }
 }
 </script>
@@ -141,11 +123,6 @@ h1 {
   text-align: left;
 }
 
-.addClassLoser{
-  text-align: left;
-  font-size: 1em;
-}
-
 .container {
   display: flex;
   flex-direction: row;
@@ -160,12 +137,6 @@ div.v-card {
   width: 500px;
   height: auto;
 }
-
-/* .matchUp .v-card__text{
-  text-align: left;
-  padding: 0px;
-  font-size: 1.25em;
-} */
 
 #gameInfo {
   display: flex;
@@ -209,12 +180,8 @@ min-width: 411px;
 top: 60px !important; 
 left: 0px !important; 
 z-index: 8;
+background-color: red;
 }
 
-#selectDivision.override{
-  top: 59px;
-  left: 0px;
-  background-color: red;
-}
 
 </style>
