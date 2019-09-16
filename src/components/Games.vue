@@ -33,7 +33,7 @@
           <v-card-text>{{games.time}}</v-card-text>
           <v-card-text>{{games.location}}</v-card-text>
           <!-- weather API key 1fd143a7ec38c83bdc1726e9c0220d29 -->
-          <v-card-text>{{games.weather}}</v-card-text>
+          <v-card-text>{{weather}}</v-card-text>
         </div>
       </v-container>
 
@@ -54,7 +54,7 @@
 <script>
 
 import gameData from "../assets/data/gameData.json"
-// var gameDataSorted = gameData.sort((a,b) => (a.date > b.date) ? 1 : -1);
+import axios from 'axios'
 
 export default {
   name: 'Games',
@@ -65,6 +65,7 @@ export default {
       usedList: {},
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
       conferences: ['AFC', 'NFC'],
+      weather: 'weather loading...'
     }
   },
 
@@ -73,12 +74,20 @@ export default {
   },
 
   methods: {
-
     loadWeather(){
+      console.log(this.weather)
+      var vm = this;
+      axios.get('https://api.openweathermap.org/data/2.5/weather?q=Rochester&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
+      .then(function(response){
+        vm.weather = response.data.main
+      })
+      .catch(function(error){
+        vm.weather = 'An error has occured' + error;
+      })
 
     },
 
-    
+
     changeColorWinner(event) {
       let winner = event.target.textContent;
 
