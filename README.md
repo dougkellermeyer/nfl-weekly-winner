@@ -1,5 +1,7 @@
 # nfl-weekly-winners
 
+## Netlify link - https://nfl-weekly-winners.netlify.com
+
 ### To run locally
 ```
 npm run serve
