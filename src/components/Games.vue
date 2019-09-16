@@ -4,12 +4,10 @@
 
     <h2>Select the winners for this week's games!</h2>
 
-    <v-container fill-height>
+    <v-container>
     <v-row align="center">
-      <v-col class="d-flex" cols="12" sm="6">
+      <v-col cols="2" sm="5">
         <v-select
-          id="selectDivision"
-          class="override"
           v-model="filterBy"
           :clearable = "true"
           :items="divisions"
@@ -17,30 +15,6 @@
           outlined
         ></v-select>
       </v-col>
-
-       <!-- <v-col class="d-flex" cols="12" sm="6">
-        <v-select
-          v-model="filterBy"
-          :items="conferences"
-          label="Conferences"
-        ></v-select>
-      </v-col> -->
-
-      <!-- <v-col class="d-flex" cols="12" sm="6">
-        <v-select
-          :items="items"
-          label="Day"
-          outlined
-        ></v-select>
-      </v-col>
-
-      <v-col class="d-flex" cols="12" sm="6">
-        <v-select
-          :items="items"
-          label="Time"
-          solo
-        ></v-select>
-      </v-col> -->
     </v-row>
   </v-container>
 
@@ -229,7 +203,7 @@ div.v-card {
   padding: 5px;
 }
 
-.v-menu > .v-menu__content.menuable__content__active{
+.v-menu__content{
 max-height: 304px; 
 min-width: 411px; 
 top: 60px !important; 
@@ -238,7 +212,7 @@ z-index: 8;
 }
 
 #selectDivision.override{
-  top: 60px;
+  top: 59px;
   left: 0px;
   background-color: red;
 }
