@@ -10,6 +10,7 @@
           v-model="filterBy"
           :clearable = true
           :items="divisions"
+          text-alignment: left
           label="Division"
           outlined
         ></v-select>
@@ -168,5 +169,7 @@ div.v-card {
 .winnerButtons {
   padding: 5px;
 }
+
+
 
 </style>
