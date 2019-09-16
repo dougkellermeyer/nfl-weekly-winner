@@ -76,7 +76,7 @@ margin-top: 60px;
 
 #loginCard {
 margin-left: 35%;
-margin-top: 200px;
+margin-top: 125px;
 padding-top: 40px;
 padding-left: 40px;
 padding-right: 40px;

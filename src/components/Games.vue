@@ -10,7 +10,6 @@
           v-model="filterBy"
           :clearable = true
           :items="divisions"
-          text-alignment: left
           label="Division"
           outlined
         ></v-select>
@@ -69,7 +68,17 @@ export default {
     }
   },
 
+  created(){
+    this.loadWeather();
+  },
+
   methods: {
+
+    loadWeather(){
+
+    },
+
+    
     changeColorWinner(event) {
       let winner = event.target.textContent;
 
