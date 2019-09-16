@@ -33,7 +33,7 @@
           <v-card-text>{{games.time}}</v-card-text>
           <v-card-text>{{games.location}}</v-card-text>
           <!-- weather API key 1fd143a7ec38c83bdc1726e9c0220d29 -->
-          <v-card-text>{{weather}}</v-card-text>
+          <v-card-text>{{weather[games.id]}}</v-card-text>
         </div>
       </v-container>
 
@@ -101,9 +101,6 @@ export default {
           vm.weather = 'An error has occured' + error;
         })
       }
-
-     
-
     },
 
 
