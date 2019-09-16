@@ -7,13 +7,6 @@
   <v-row>
       <v-col cols="3" sm="5">
         <v-select
-          :menu-props="{ 
-          auto: false,
-          overflowY: true,
-          top: true,
-          left: true,
-          maxWidth: auto
-          }"
           v-model="filterBy"
           :clearable = true
           :items="divisions"
@@ -175,19 +168,5 @@ div.v-card {
 .winnerButtons {
   padding: 5px;
 }
-
-.v-menu__content{
-max-height: 304px; 
-min-width: 411px; 
-top: 60px !important; 
-left: 0px !important; 
-z-index: 8;
-background-color: red;
-}
-
-v-select > v-menu {
-  left: 0px;
-}
-
 
 </style>
