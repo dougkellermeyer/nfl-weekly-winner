@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>NFL Weekly winnersArray</h1>
+    <h1>NFL Weekly Winner</h1>
 
-    <h2>Select the winnersArray for this week's games!</h2>
+    <h2>Select the winners for this week's games!</h2>
 
     <v-container fill-height>
     <v-row align="center">
