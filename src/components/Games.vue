@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h1>NFL Weekly Winner</h1>
 
-    <h2>Select the winners for this week's games!</h2>
+    <h1>Select the winners for this week's games!</h1>
 
 <v-container>
   <v-row>
@@ -110,14 +109,9 @@ export default {
 
 <style scoped>
 
-h1 {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  color: white;
-  font-size: 4em
-}
 
-h2 {
+h1 {
+  margin-top: 75px;
   margin-bottom: 20px;
   color: white;
 }
