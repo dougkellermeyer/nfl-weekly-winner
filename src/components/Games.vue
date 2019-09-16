@@ -94,15 +94,15 @@ export default {
       usedList: {},
       divisions: ['AFC East','AFC West','AFC North', 'AFC South', 'NFC East', 'NFC West', 'NFC South', 'NFC North'],
       conferences: ['AFC', 'NFC'],
-      matches: []
+      winners: []
     }
   },
 
   methods: {
      changeColorWinner() {      
       //grab name of button (string), pass that to the getElementById
-    let matches = this.matches;
-     console.log(this.matches)
+    let winners = this.winners;
+     console.log(this.winners)
   
 
       let winner = event.target.textContent;
@@ -111,11 +111,13 @@ export default {
       for (let matchUp of matchUpArray) {
         if(matchUp.textContent.includes(winner)){
           matchUp.setAttribute("class", "addClassWinner")
-          matches.push(matchUp.textContent)
-        } 
+          winners.push(matchUp.textContent)
+        } else{
+         //remove from winners array
+        }
       }
 
-      console.log(matches)
+      console.log(winners)
 
       // if(winner === gameData[0].homeTeam) {
       //   document.querySelector('.matchUpTeam').setAttribute("class", "addClassWinner");
