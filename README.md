@@ -1,4 +1,4 @@
-# nfl-weekly-winner
+# nfl-weekly-winners
 
 ### To run locally
 ```
