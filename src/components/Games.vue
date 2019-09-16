@@ -87,17 +87,22 @@ export default {
           cities.push(city);
       }
 
-      console.log(cities)
+      //I fully recognize this code isn't performant but I wanted to get the API info on the page
 
-      let location = ""
+      for(let j = 0; j < cities.length; j++){
+        let location = cities[j]
+        console.log(location)
 
-      axios.get('https://api.openweathermap.org/data/2.5/weather?q=+'+ location + '&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
-      .then(function(response){
-        vm.weather = Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min) + " \xB0" + "F"
-      })
-      .catch(function(error){
-        vm.weather = 'An error has occured' + error;
-      })
+        axios.get('https://api.openweathermap.org/data/2.5/weather?q=+'+ location + '&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
+          .then(function(response){
+          vm.weather.push(Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min) + " \xB0" + "F")
+        })
+        .catch(function(error){
+          vm.weather = 'An error has occured' + error;
+        })
+      }
+
+     
 
     },
 
