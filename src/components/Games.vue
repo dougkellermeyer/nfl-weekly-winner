@@ -79,7 +79,7 @@ export default {
       var vm = this;
       axios.get('https://api.openweathermap.org/data/2.5/weather?q=Rochester&units=imperial&appid=1fd143a7ec38c83bdc1726e9c0220d29')
       .then(function(response){
-        vm.weather = Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min)
+        vm.weather = "Current Weather - " + Math.round(response.data.main.temp_max) + "/" + Math.round(response.data.main.temp_min) + " \xB0" + "F"
         console.log(response)
       })
       .catch(function(error){
